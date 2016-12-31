@@ -15,7 +15,7 @@ end
 
 function _prompt_virtualfish -a sep_color -a venv_color -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"
   [ "$theme_display_virtualenv" = 'no' ]; and return
-  echo -n -s $sep_color '|' $venv_color $PYTHON_VERSION
+  echo -n -s $sep_color '|' \U1F40D " " $venv_color $PYTHON_VERSION
   [ -n "$VIRTUAL_ENV" ]; and echo -n -s '@'(basename "$VIRTUAL_ENV")
 end
 
