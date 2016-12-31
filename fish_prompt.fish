@@ -26,6 +26,7 @@ function _prompt_vi_mode -a sep_color -a vi_mode_color -d "Display vi mode"
       case visual
         echo -n -s $vi_mode_color 'V'
     end
+  end
 end
 
 function _prompt_virtualfish -a sep_color -a venv_color -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"
