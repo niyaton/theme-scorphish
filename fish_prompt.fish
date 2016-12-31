@@ -13,6 +13,21 @@ function _prompt_rubies -a sep_color -a ruby_color -d 'Display current Ruby (rvm
   echo -n -s $sep_color '|' $ruby_color (echo -n -s $ruby_version | cut -d- -f2-)
 end
 
+function _prompt_vi_mode -a sep_color -a vi_mode_color -d "Display vi mode"
+  if test "$fish_key_bindings" = "fish_vi_key_bindings"
+    # echo -n -s $sep_color '|'
+    switch $fish_bind_mode
+      case default
+        echo -n -s $vi_mode_color 'N'
+      case insert
+        echo -n -s $vi_mode_color 'I'
+      case replace-one
+        echo -n -s $vi_mode_color 'R'
+      case visual
+        echo -n -s $vi_mode_color 'V'
+    end
+end
+
 function _prompt_virtualfish -a sep_color -a venv_color -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"
   [ "$theme_display_virtualenv" = 'no' ]; and return
   echo -n -s $sep_color '|' $venv_color $PYTHON_VERSION
