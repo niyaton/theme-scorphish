@@ -99,6 +99,8 @@ function fish_prompt
   set_color -o 666
   printf '['
 
+  _prompt_vi_mode $gray $normal
+
   _prompt_whoami $gray $green
 
   set_color -o cyan
