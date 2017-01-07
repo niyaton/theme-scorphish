@@ -15,7 +15,6 @@ end
 
 function _prompt_vi_mode -a sep_color -a vi_mode_color -d "Display vi mode"
   if test "$fish_key_bindings" = "fish_vi_key_bindings"
-    # echo -n -s $sep_color '|'
     switch $fish_bind_mode
       case default
         echo -n -s $vi_mode_color 'N'
@@ -26,6 +25,7 @@ function _prompt_vi_mode -a sep_color -a vi_mode_color -d "Display vi mode"
       case visual
         echo -n -s $vi_mode_color 'V'
     end
+    echo -n -s $sep_color '|'
   end
 end
 
